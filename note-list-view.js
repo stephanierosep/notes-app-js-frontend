@@ -1,19 +1,16 @@
 (function (exports) {
- function HtmlList() {
-   this.comList = [];
+ function ListView(list_model) {
+   this.listModel = list_model;
  };
 
- HtmlList.prototype.convertList = function() {
-   var newList = new List();
-   return this.comList.push(newList);
- }
- exports.HtmlList = HtmlList;
-})(this);
+ ListView.prototype.convertList = function() {
+   var arrayOfTexts = []
+   this.listModel.notes.forEach(function(note) {
+     arrayOfTexts.push(note.text);
+   });
 
-// var list = List();
-// list.listOfNotes();
-var list = new List();
-list.addnote("Favourite drink: seltzer");
-var result = new HtmlList();
-result.convertList();
-console.log(result.comList);
+   var html = "<ul><li>" + arrayOfTexts.join("</li><li>") + "</li></ul>";
+   return html;
+ }
+ exports.ListView = ListView;
+})(this);

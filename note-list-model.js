@@ -20,8 +20,3 @@
   exports.List = List;
 
 })(this);
-
-var list = new List();
-var notes = new Note();
-list.write("cat");
-console.log(list.notes);
