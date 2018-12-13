@@ -14,3 +14,9 @@
  }
  exports.ListView = ListView;
 })(this);
+//
+// var note = new Note();
+// var list = new List();
+// list.write("goodbye");
+// list.write("hello")
+// console.log(list.list());

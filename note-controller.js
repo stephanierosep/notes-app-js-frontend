@@ -1,16 +1,15 @@
-
 (function (exports) {
   function NoteController(list_model) {
     this.listModel = list_model;
   };
 
-  var element = document.getElementById("app");
-
-  NoteController.prototype.createNote = function() {
-    result = this.listModel.write("Goodbye")
-    result.convertList();
-    element.innerHTML = result;
+  NoteController.prototype.changeText = function() {
+    // var element = document.getElementById("app");
+    var change = document.getElementById("app").innerHTML = "Howdy world";
   }
-  console.log(result);
 
-})
+  exports.NoteController = NoteController;
+})(this);
+
+var message = new NoteController();
+message.changeText();
